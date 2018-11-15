@@ -1,0 +1,20 @@
+﻿@model Eq2Grau.Models.Parametros
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <h2> Digite os parâmetros: </h2>
+        @using (Html.BeginForm())
+        {
+            <p> a: @Html.TextBoxFor(x => x.stra, new { @class= "form-control" })</p>
+            <p> b: @Html.TextBoxFor(x => x.strb, new { @class = "form-control" }) </p>
+            <p> c: @Html.TextBoxFor(x => x.strc, new { @class = "form-control" })</p>
+            <input type="submit" value="Calcular" class="btn btn-danger" />
+        }
+        <p> @Html.ViewBag.Resultado </p>
+        <p> @Html.ValidationSummary()</p>
+    </div>
+</div>
